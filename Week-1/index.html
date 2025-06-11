@@ -3,9 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Docunhgjhght</title>
+    <title>To do Web-Page</title>
 </head>
 <body>
+    <h1>To Do Web-Page</h1>
+    <input type="text" placeholder="Add Your To-do" />
+    <button onclick="addTodo()">Add It !</button>
     
 </body>
+<script>
+
+let ctr = 1;
+function deleteTodo(index){
+    const element = document.getElementById("Todo-" + index);
+    element.parentNode.removeChild(element);
+
+}
+
+
+function addTodo(){
+    const inputEl = document.querySelector("input");
+    const value = inputEl.value;
+    // Here we have select the input and store it in a var inputEl after that we have select that the value which will be put by user on web-page will be stored inside inputEl variable 
+
+    const newDivEl = document.createElement("div");
+newDivEl.setAttribute("id", "Todo-"  + ctr);
+
+
+    newDivEl.innerHTML = "<div>" + value + '</div><button onclick = "deleteTodo(' + ctr + ')">Delete</button>';
+
+    // Created a new div and stored under variable newDivEl and in next step we have declared that the new div in which it stored its html value means what we type inside will do what was written after = 
+
+
+    // work of set attribute is that it will give it a id when we delete it and why +1 so that if we delete again after again it will go in increasing format so it is easy to know 
+    
+    document.querySelector("body").appendChild(newDivEl)
+ // Here we have connected that new div with body
+     ctr = ctr + 1;
+
+   
+}
+</script>
 </html>
