@@ -23,7 +23,7 @@ newDivEl.setAttribute("id", "Todo-"  + ctr);
     // work of set attribute is that it will give it a id when we delete it and why +1 so that if we delete again after again it will go in increasing format so it is easy to know 
     
     document.querySelector("body").appendChild(newDivEl)
- // Here we have connected that new div with body
+ // Here we have connected that new div with body tag.
      ctr = ctr + 1;
 
    
