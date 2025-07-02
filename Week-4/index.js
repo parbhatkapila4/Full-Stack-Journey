@@ -5,11 +5,10 @@ const app = express();
 const users = [{
     name: 'jaat',
     kidneys: [{
-        healthy : false
-    }, {
-        healthy: true
-    }]
+        healthy : true
+    }, {healthy: false}]
 }]
+
 
 
 app.use(express.json());
@@ -49,16 +48,52 @@ app.post("/", function(req, res){
 
 
 
+
+
+
 app.put("/", function(req, res){
-    
+    for(i = 0; i<users[0].kidneys.length; i++){
+        users[0].kidneys[i].healthy = true;
+    }
+    res.json({});
 })
 
 app.delete("/", function(req, res){
-    
+    if(isthereanyunhealthykidneys()){
+ const newKidneys = [];
+    for(i = 0; i<users[0].kidneys.length; i++){
+        if(!users[0].kidneys[i].healthy){
+            newKidneys.push({
+                healthy: true
+            })
+        }
+    }
+    users[0].kidneys = newKidneys;
+    res.json({mgs: "Done for Delete"})        
+
+
+    }else{
+        res.status(411).json({
+            msg: "You have no such bad kidneys"
+        });
+    }
+
+
+
 })
 
 
+function isthereanyunhealthykidneys(){
+    let atleastoneunhealthykidney = false;
+    for(i = 0; i<users[0].kidneys.length; i++){
+        if(!users[0].kidneys[i].healthy){
+            atleastoneunhealthykidney = true;
+        }
+}
 
+return atleastoneunhealthykidney;
+
+}
 app.listen(3000);
 
 
