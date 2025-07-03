@@ -14,8 +14,9 @@ function CheckerMiddleware(req, res, next){
     }
 }
 
+app.use(CheckerMiddleware);
 
-app.get("/ride1", CheckerMiddleware, (req,res)=> {
+app.get("/ride1", (req,res)=> {
     res.json({
         msg: "Go Ahead Enjoy ride 1"
     })
@@ -23,7 +24,7 @@ app.get("/ride1", CheckerMiddleware, (req,res)=> {
 
 
 
-app.get("/ride2", CheckerMiddleware, (req,res)=> {
+app.get("/ride2", (req,res)=> {
     res.json({
         msg: "Yaaaa! Enjoy ride 2"
     })
