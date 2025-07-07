@@ -11,15 +11,15 @@
     "Linkedin"
     <div id="posts"></div>
   <script>
-// async function getLatestPost(){
-// const Response = await fetch("https://jsonplaceholder.typicode.com/posts/1")
+async function getLatestPost(){
+const Response = await fetch("https://jsonplaceholder.typicode.com/posts/1")
 
-// const Convert = await Response.json();
-// console.log(Convert);
+const Convert = await Response.json();
+console.log(Convert);
 
-// document.getElementById("posts").innerHTML = Convert.body;
+document.getElementById("posts").innerHTML = Convert.body;
 
-// }
+}
 
 
 async function getLatestPost(){
