@@ -119,3 +119,21 @@ main();
 
 
 // That's how we write the axios code. instead of fetch.From line 94 to 109 we can see the differance between fetch and axios
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
