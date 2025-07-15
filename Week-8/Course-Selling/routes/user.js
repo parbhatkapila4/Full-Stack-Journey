@@ -23,6 +23,10 @@ userRouter.get("/purchases", (req, res) => {
 })
 
 
+function userauth(){
+    
+}
+
 
 module.exports = {
     userRouter

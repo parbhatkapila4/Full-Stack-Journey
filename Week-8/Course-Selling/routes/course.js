@@ -8,7 +8,7 @@ courseRouter.post("/purchase", (req, res) => {
 })
 
 
-courseRouter.get("/courses", (req, res) => {
+courseRouter.get("/preview", (req, res) => {
     res.json({
         message: ""
     })
