@@ -1,21 +1,32 @@
-import { useEffect, useState } from "react";
-import { useFetch, usePostTitle } from "./hooks/useFetch";
+import { useRef} from "react";;
 
 const App = () => {
-  const [currentPost, setCurrentPost] = useState(1);
-  const { finalData } = useFetch(
-    "https://jsonplaceholder.typicode.com/posts/1"
-  );
+  
+  function useDebounce(original){
+const currentClock = useRef();
 
-  return (
-    <div>
-      <button onClick={() => setCurrentPost(1)}>Button 1</button>
-      <button onClick={() => setCurrentPost(2)}>Button 2</button>
-      <button onClick={() => setCurrentPost(3)}>Button 3</button>
+const fn = () =>{
+  clearTimeout(currentClock.current);
+  currentClock.current = setTimeout(original, 200) 
+}
+return fn
+  }
+  
+  function sendDataToBackend(){
+    fetch("api.amazon.com/search/");
+  }
 
-      {JSON.stringify(finalData)}
-    </div>
-  );
-};
+  const debouncefn = useDebounce(sendDataToBackend)
+  // means given a sendDataToBackend function pass it using a useDebounce hook which returns us a another variable i.e., debouncefn and this the function which needs to be called in input box
+return(
+  <>
+<input type="text" onChange = {debouncefn}></input>
+
+  </>
+)
+  
+}
 
 export default App;
+
+
