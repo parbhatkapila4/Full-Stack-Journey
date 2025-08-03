@@ -1,18 +1,12 @@
-import Button from "./components/button";
-import Input from "./components/input";
+import Otp from "./components/Otp";
 
 const App = () => {
   return (
     <div className="h-screen bg-[#002b5b]">
       <div>
+        
         <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-
-        <Input type="text" placeholder="Username" />
-        <Button disabled={true}>Sign Up</Button>
+        <Otp />
       </div>
     </div>
   );
