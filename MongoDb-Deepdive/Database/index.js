@@ -5,17 +5,26 @@ const ObjectId = Schema.ObjectId
 mongoose.connect("mongodb+srv://Parbhatkapila:%40Kapila0312@cluster-1.xps1vjs.mongodb.net/");
 
 const AdminSchema = new Schema({
-
+username: String,
+password : String
 
 })
 
 const UserSchema = new Schema({
-
+username : String,
+password : String,
+purchasedCourses : [{
+    type: mongoose.Schema.Types.ObjectId,   
+    ref: 'Course'
+}]
 
 })
 
 const CourseSchmea = new Schema({
-
+title: String,
+description: String,
+imageLink : String,
+price: Number
 
 })
 

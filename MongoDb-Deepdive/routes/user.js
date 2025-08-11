@@ -1,7 +1,6 @@
-const {Router} = require("express");
+const express = require("express");
 const userMiddleware = require("../middlewares/user");
-const { useImperativeHandle } = require("react");
-const router = Router();
+const router = express.Router();
 
 router.post("/signup", (req, res) => {
 
