@@ -20,7 +20,7 @@ purchasedCourses : [{
 
 })
 
-const CourseSchmea = new Schema({
+const CourseSchema = new Schema({
 title: String,
 description: String,
 imageLink : String,
@@ -28,11 +28,11 @@ price: Number
 
 })
 
-const AdminModel = mongoose.model("Admin", AdminSchema);
-const UserModel = mongoose.model("User", UserSchema);
-const CourseModel = mongoose.model("Course", CourseSchmea);
+const Admin = mongoose.model("Admin", AdminSchema);
+const User = mongoose.model("User", UserSchema);
+const Course = mongoose.model("Course", CourseSchema);
 
 module.exports = {
-AdminModel, UserModel, CourseModel 
+Admin, User, Course 
 
 }
