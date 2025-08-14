@@ -1,9 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-function delayedCall(fn) {
-    setTimeout(fn, 1000);
+function greet(user) {
+    console.log("Hello" + user.name);
 }
-delayedCall(function () {
-    console.log("I am Nested Function");
+;
+greet({
+    name: "Parbhat",
+    age: 22
 });
 //# sourceMappingURL=index.js.map

@@ -1,7 +1,19 @@
-function delayedCall(fn: () => void){
-    setTimeout(fn, 1000);
+let firstName: string = "Parbhat"
+let age: number = 23
+
+interface UserType {
+    firstName: string,
+    lastName: string,
+    age: number
 }
 
-delayedCall(function(){
-    console.log("I am Nested Function")
-})
+
+function greet(user: UserType) {
+
+}
+
+let user: UserType = {
+        firstName: "parbhat",
+        age: 23,
+        lastName: "kapila"
+}
