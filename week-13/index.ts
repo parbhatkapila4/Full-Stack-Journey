@@ -1,6 +1,7 @@
-function addition(x:number ,y:number){
-return (x + y);
+function delayedCall(fn: () => void){
+    setTimeout(fn, 1000);
 }
 
-let ans = addition(3,2);
-console.log(ans)
+delayedCall(function(){
+    console.log("I am Nested Function")
+})
