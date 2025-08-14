@@ -6,13 +6,13 @@ const App2 = () => {
   const [counter, setCounter] = useState(1);
 
   useEffect(() => {
-    async function makhi() {
+    async function random() {
       const response = await axios.get(
         "https://jsonplaceholder.typicode.com/todos/" + counter
       );
       setTrade(response.data.title);
     }
-    makhi();
+    random();
   }, [counter]);
   return (
     <div>
