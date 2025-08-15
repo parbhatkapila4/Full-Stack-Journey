@@ -1,39 +1,24 @@
-interface Address {
-       city: string,
-        country: string,
-        pincode: number
-}
-
-interface User {
+interface People {
     name: string,
     age: number,
-    address: Address
-}
-interface Office {
-    address: Address
+    // greet: () => string
 }
 
+let person: People = {
+name: "parbhat",
+age:23,
+// greet: () => {
+//     return "Hi"
+// }
+}
 
-let user: User =  {
-    name: "Parbhat",
-    age: 23,
-    address: {
-        city: "Bengaluru",
-        country: "India",
-        pincode: 530066
-
-    }
+class Manager implements People{
+        name: string;
+        age: number;
+            constructor(name: string,  age: number){
+                    this.name = name,
+                    this.age = age
+            }
 }
-function isLegal(user: User): boolean{
-        if(user.age >= 18){
-            return true;
-        }else{
-            return false
-        }
-}
-const ans = isLegal(user)
-if (ans){
-    console.log("I am Legal")
-}else{
-    console.log("I am Under Age");
-}
+let user = new Manager("Parbhat", 20);
+console.log(user.age)
