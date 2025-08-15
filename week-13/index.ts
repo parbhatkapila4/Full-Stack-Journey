@@ -1,12 +1,19 @@
+interface Address {
+       city: string,
+        country: string,
+        pincode: number
+}
+
 interface User {
     name: string,
     age: number,
-    address?: {
-        city: string,
-        country: string,
-        pincode: number
-    }
+    address: Address
 }
+interface Office {
+    address: Address
+}
+
+
 let user: User =  {
     name: "Parbhat",
     age: 23,
