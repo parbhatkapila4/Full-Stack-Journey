@@ -1,24 +1,27 @@
-interface People {
-    name: string,
-    age: number,
-    // greet: () => string
+type Employee = {
+    name: string;
+    startDate: string;
 }
 
-let person: People = {
-name: "parbhat",
-age:23,
-// greet: () => {
-//     return "Hi"
-// }
+type Manager = {
+    name: string;
+    department: string;
+};
+
+type TeamLead = Employee & Manager; 
+
+let e: Employee = {
+    name: "Parbhat",
+    startDate: "25Sep2025"
+}
+let m: Manager = {
+    name: "Parbhat",
+    department: "developing"
 }
 
-class Manager implements People{
-        name: string;
-        age: number;
-            constructor(name: string,  age: number){
-                    this.name = name,
-                    this.age = age
-            }
+let t: TeamLead = {
+     name: "Parbhat",
+     startDate: "25Sep2025",
+         department: "developing"
+
 }
-let user = new Manager("Parbhat", 20);
-console.log(user.age)
