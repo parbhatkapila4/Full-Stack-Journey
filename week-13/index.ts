@@ -1,19 +1,15 @@
-// who can vote and who cannot via typeScript
-
 interface User {
     name: string,
     age: number,
-    address: {
+    address?: {
         city: string,
         country: string,
         pincode: number
     }
 }
-
-
 let user: User =  {
     name: "Parbhat",
-    age: 8,
+    age: 23,
     address: {
         city: "Bengaluru",
         country: "India",
