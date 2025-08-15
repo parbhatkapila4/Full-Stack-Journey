@@ -1,19 +1,36 @@
-let firstName: string = "Parbhat"
-let age: number = 23
+// who can vote and who cannot via typeScript
 
-interface UserType {
-    firstName: string,
-    lastName: string,
-    age: number
+interface User {
+    name: string,
+    age: number,
+    address: {
+        city: string,
+        country: string,
+        pincode: number
+    }
 }
 
 
-function greet(user: UserType) {
+let user: User =  {
+    name: "Parbhat",
+    age: 8,
+    address: {
+        city: "Bengaluru",
+        country: "India",
+        pincode: 530066
 
+    }
 }
-
-let user: UserType = {
-        firstName: "parbhat",
-        age: 23,
-        lastName: "kapila"
+function isLegal(user: User): boolean{
+        if(user.age >= 18){
+            return true;
+        }else{
+            return false
+        }
+}
+const ans = isLegal(user)
+if (ans){
+    console.log("I am Legal")
+}else{
+    console.log("I am Under Age");
 }
