@@ -9,16 +9,16 @@ function App() {
 }
 
 function ToggleMessage() {
-  const [isVariable, setIsVariable] = useState(true);
+  let [notificatonCount, setnotificatonCount] = useState(0);
+
+  console.log("re-render");
+  function toggle() {
+    setnotificatonCount(notificatonCount + 1);
+  }
   return (
     <div>
-      <button
-        className="bg-black text-white p-5 hover:bg-amber-800 cursor-pointer rounded-2xl m-10"
-        onClick={() => setIsVariable(!isVariable)}
-      >
-        Toggle Button
-      </button>
-      {isVariable && <p>This message is conditionally rendering!</p>}
+      <button onClick={toggle}>Toggle message</button>
+      {notificatonCount}
     </div>
   );
 }
