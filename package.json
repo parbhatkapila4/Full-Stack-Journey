@@ -1,0 +1,24 @@
+{
+  "name": "full-stack-journey",
+  "version": "1.0.0",
+  "description": "This repo tracks my personal journey learning full stack web development — starting with core web fundamentals and moving up to modern full stack tools like Next.js, TypeScript, WebSockets, and PostgreSQL with Prisma. It’s organized week by week, covering what I learned, built, and explored along the way.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parbhatkapila4/Cohort-3.0.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/parbhatkapila4/Cohort-3.0/issues"
+  },
+  "homepage": "https://github.com/parbhatkapila4/Cohort-3.0#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
