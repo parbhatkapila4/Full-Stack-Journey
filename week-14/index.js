@@ -1,11 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-let person = {
+function sumofAge(user1, user2) {
+    return user1.name + user2.name;
+}
+const ans = sumofAge({
     name: "parbhat",
-    age: 23,
-    greet: () => {
-        return "Hi";
-    }
-};
-console.log(person.greet());
+    age: 23
+}, {
+    name: "punyakrit",
+    age: 23
+});
+console.log(ans);
 //# sourceMappingURL=index.js.map

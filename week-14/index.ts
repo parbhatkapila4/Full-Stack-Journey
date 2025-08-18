@@ -1,14 +1,18 @@
 interface User {
-    firstName: string;
-    lastName: string;
-    age: number;
+    name: string,
+    age: number
 }
 
-function filterUser(users: User[]){
-    let ans = []
-    for (let i = 0; i < users.length; i++){
-        if (users[i].age > 18){
-            ans.push(users[i])
-        }
-    }
+function sumofAge(user1: User, user2: User){
+    return user1.name + user2.name;
 }
+
+const ans = sumofAge({
+    name: "parbhat",
+    age: 23
+}, {
+    name: "punyakrit",
+    age: 23
+})
+
+console.log(ans)
