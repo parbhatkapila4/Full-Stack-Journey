@@ -1,33 +1,25 @@
 import { useState } from "react";
 
-const App = () => {
-  return(
-    <div>
-          < Card1 />
-          < Card2 />
+function App() {
+  const [isEven, setIsEven] = useState(false);
+
+  return (
+    <div className="bg-amber-800 justify-between hover:bg-amber-400 hover:cursor-crosshair p-5 m-20 flex rounded-4xl text-teal-400">
+      <button
+        className="flex  pb-10 pr-10 "
+        onClick={function () {
+          setIsEven(!isEven);
+        }}
+      >
+        Flip the Coin
+      </button>
+      {isEven ? (
+        <p className="text-pink-500">It's Even</p>
+      ) : (
+        <p className="text-pink-800">It's Odd</p>
+      )}
     </div>
-  )
+  );
 }
-
-const Card1 = () => {
-return (
-  <div className="bg-red-500 rounded-[20px]">
-    Hi there 
-  </div>
-)
-};
-
-
-const Card2 = () => {
-  return(
-<div className="bg-red-500 rounded-[20px]">
-    Hello there
-  </div>
-  ) 
-};
-
-
-
-
 
 export default App;
