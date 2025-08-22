@@ -1,19 +1,28 @@
-import { Client } from "pg";
+import { Client } from 'pg';
 
-const pgClient = new Client({
-  user: "neondb_owner",
-  password: "npg_SzDu0b7KERJU",
-  port: 5432,
-  host: "ep-mute-morning-a1lo14r3-pooler.ap-southeast-1.aws.neon.tech",
-  database: "neondb",
-  ssl: true,
-});
+// Async function to insert data into a table
+async function insertData(username: string, email: string, password: string) {
+  const client = new Client({
+    host: 'localhost',
+    port: 5432,
+    database: 'postgres',
+    user: 'postgres',
+    password: 'mysecretpassword',
+  });
 
-async function main() {
-  await pgClient.connect();
-  const response = await pgClient.query(
-    "UPDATE users SET username='punyakrit' WHERE id = 8"
-  );
-  console.log(response.rows);
+  try {
+    await client.connect(); // Ensure client connection is established
+    // Use parameterized query to prevent SQL injection
+    const insertQuery = "INSERT INTO users (username, email, password) VALUES ($1, $2, $3)";
+    const values = [username, email, password];
+    const res = await client.query(insertQuery, values);
+    console.log('Insertion success:', res); // Output insertion result
+  } catch (err) {
+    console.error('Error during the insertion:', err);
+  } finally {
+    await client.end(); // Close the client connection
+  }
 }
-main();
+
+// Example usage
+insertData('username5', 'user5@example.com', 'user_password').catch(console.error);
