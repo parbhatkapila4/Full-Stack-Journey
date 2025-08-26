@@ -9,9 +9,17 @@ datasource db {
 
 // From below we will write the schema
 model users {
-  id       Int    @id @default(autoincrement())
-  username String @unique
-  password String
-  age      Int
-  city     String
+  id        Int    @id @default(autoincrement())
+  username  String
+  password  String
+  firstName String
+  lastName  String
+}
+
+model todos {
+  id          Int     @id @default(autoincrement())
+  title       String
+  description String
+  done        Boolean
+  userId      Int
 }
