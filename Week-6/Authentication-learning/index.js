@@ -15,6 +15,12 @@ function logger(req, res, next) {
 
 // localhost:3000
 app.get("/", function (req, res) {
+  const username = req.query.usernamedemo
+  const password = req.query.passworddemo
+  res.json({
+    username,
+    password
+  })
   res.sendFile(__dirname + "/public/index.html");
 });
 
