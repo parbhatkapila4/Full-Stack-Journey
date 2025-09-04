@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 
 export default function () {
@@ -7,7 +9,7 @@ export default function () {
       bye from bad
       <button
         onClick={() => {
-          setCount((c) => c + 1);
+          setCount((count) => count + 1);
         }}
       >
         Click me ({count})
